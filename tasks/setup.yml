@@ -1,0 +1,28 @@
+---
+
+- name: setup - create group
+  group:
+    name={{ hubot_group }}
+    system=yes
+
+- name: setup - create user
+  user:
+    name={{ hubot_user }}
+    group={{ hubot_group }}
+    system=yes
+    createhome=no
+
+- name: setup - build dir
+  file:
+    state=directory
+    path={{ hubot_build_dir }}
+
+- name: setup - log directory
+  file:
+    state=directory
+    path={{ hubot_log_dir }}
+    owner={{ hubot_user }}
+    group={{ hubot_group }}
+    mode=0755
+
+

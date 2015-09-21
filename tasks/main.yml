@@ -1,0 +1,23 @@
+---
+
+- name: dependencies
+  include: depend.yml
+
+- name: setup for install
+  include: setup.yml
+
+- name: deploy local
+  include: deploy_local.yml
+  when: hubot_deploy_local
+
+#- name: debian install
+#  include: install_debian.yml
+#  when: ansible_os_family == 'Debian'
+
+- name: configure
+  include: config.yml
+
+- name: service
+  include: service.yml
+  when: hubot_deploy_local
+

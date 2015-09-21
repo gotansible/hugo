@@ -1,0 +1,68 @@
+---
+
+hubot_install_dir: /opt/hubot
+hubot_build_dir: /var/ansible/hubot
+hubot_log_dir: /var/log/hubot
+hubot_redis_local: true
+
+hubot_user: hubot
+hubot_group: hubot
+
+# development related
+hubot_service_install: true
+hubot_deploy_local: false
+hubot_source_local_path: emptish/
+
+hubot_adapter: slack
+
+hubot_node_packages:
+  - cheerio
+  - clark
+  - htmlparser
+  - hubot-calculator
+  - hubot-hipchat-emoticons
+  - hubot-{{hubot_adapter}}
+  - hubot-scripts
+  - hubot-youtube
+  - nodepie
+  - soupselect
+  - textspark
+
+#############################################################################
+#
+# hubot_scripts: A list of optional Hubot scripts to use
+#
+#############################################################################
+
+# hubot_scripts:
+  # - achievement_unlocked.coffee
+  # - ackbar.coffee
+  # - applause.coffee
+  # - ascii.coffee
+  # - base64.coffee
+  # - bees.coffee
+  # - botsnack.coffee
+  # - cat.coffee
+  # - cleverbot.coffee
+  # - coin.coffee
+  # - dealwithit.coffee
+  # - decide.coffee
+  # - fortune.coffee
+  # - github-status.coffee
+  # - grumpycat.coffee
+  # - hackernews.coffee
+  # - megusta.coffee
+  # - ping.coffee
+  # - reddit
+  # - reddit-jokes.coffee
+  # - reddit-random-top.coffee
+  # - remind.coffee
+  # - stallman.coffee
+  # - twss
+  # - wunderground.coffee
+  # - xkcd.coffee
+  # - zombies.coffee
+
+
+hubot_slack_token: blah-blah-setme-xxxxxxxx
+

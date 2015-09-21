@@ -1,0 +1,15 @@
+---
+
+- name: deploy local - copy source
+  synchronize:
+    src: "{{ hubot_source_local_path }}"
+    dest: "{{ hubot_install_dir }}"
+
+- name: deploy local - set user permissions
+  file:
+    state: directory
+    path: "{{ hubot_install_dir }}"
+    recurse: yes
+    owner: "{{ hubot_user }}"
+    group: "{{ hubot_group }}"
+

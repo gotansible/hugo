@@ -1,0 +1,34 @@
+---
+#get hubot code from github
+#move code to new deployment dir
+
+- name: checkout code to build dir - with key
+  git:
+    repo={{ gobuild_repo_url }}
+    version={{ gobuild_repo_version }}
+    depth=1
+    update=yes
+    accept_hostkey=yes
+    dest={{ gobuild_dir }}/src/{{ gobuild_project_path }}
+    force=yes
+    recursive=yes
+    key_file={{ gobuild_keyfile }}
+
+
+
+
+- name: install - Service Exists Check
+  stat: path=/etc/sv/hubot/run
+  register: hubot_service_installed
+
+- name: install - Stop Hubot service
+  command: sudo sv stop hubot
+  when: hubot_service_installed.stat.exists
+  notify:
+    - start hubot
+
+# move current link
+
+
+
+

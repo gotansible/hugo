@@ -1,0 +1,47 @@
+---
+
+- name: depend - install os apt packages
+  apt:
+    name={{ item }}
+    update_cache=yes
+    state=latest
+    cache_valid_time=3600
+  with_items:
+    - zip
+    - curl
+    - expat
+    - git
+    - libicu-dev
+    - openssl
+    - build-essential
+  when: ansible_os_family == 'Debian'
+
+
+#- name: depend - npm depend
+#  npm:
+#    name={{ item }}
+#    executable={{ hubot_node_dir }}/bin/npm
+#    path={{ hubot_dir }}
+#    state=present
+#    global=yes
+#  with_items:
+#    - coffee-script
+#    - yo
+#    - generator-hubot
+
+
+- name: depend - install node apt packages
+  apt:
+    name={{ item }}
+    update_cache=yes
+    state=latest
+    cache_valid_time=3600
+  with_items:
+    - zip
+    - curl
+    - expat
+    - git
+    - libicu-dev
+    - openssl
+    - build-essential
+  when: ansible_os_family == 'Debian'
