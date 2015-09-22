@@ -4,3 +4,4 @@
   roles:
     - role: hubot
       hubot_source_local_path: ~/src/kraveio/lev
+      hubot_adapter: shell
