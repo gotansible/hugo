@@ -7,7 +7,9 @@
     state: start
     timeout: 10
     user: "{{ hubot_user }}"
-    command: "{{ hubot_install_dir }}/bin/hubot --adapter {{ hubot_adapter }}"
+    command_setup:
+      - cd {{ hubot_install_dir }}/current
+    command: "{{ hubot_install_dir }}/current/bin/hubot --adapter {{ hubot_adapter }}"
     env_vars: "{{ hubot_env_vars }}"
   register: hubot_service_status
 

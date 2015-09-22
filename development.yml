@@ -5,7 +5,6 @@
     - role: hubot
       hubot_user: vagrant
       hubot_group: vagrant
-      hubot_deploy_local: true
       hubot_service_install: false
       hubot_source_local_path: ~/src/kraveio/lev
       hubot_install_dir: ~/

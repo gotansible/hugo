@@ -10,7 +10,6 @@ hubot_group: hubot
 
 # development related
 hubot_service_install: true
-hubot_deploy_local: false
 hubot_source_local_path: emptish/
 
 hubot_adapter: slack
@@ -18,18 +17,18 @@ hubot_adapter: slack
 hubot_env_vars:
   HUBOT_SLACK_TOKEN: setme
 
-hubot_node_packages:
-  - cheerio
-  - clark
-  - htmlparser
-  - hubot-calculator
-  - hubot-hipchat-emoticons
-  - hubot-{{hubot_adapter}}
-  - hubot-scripts
-  - hubot-youtube
-  - nodepie
-  - soupselect
-  - textspark
+#hubot_node_packages:
+#  - cheerio
+#  - clark
+#  - htmlparser
+#  - hubot-calculator
+#  - hubot-hipchat-emoticons
+#  - hubot-{{hubot_adapter}}
+#  - hubot-scripts
+#  - hubot-youtube
+#  - nodepie
+#  - soupselect
+#  - textspark
 
 #############################################################################
 #

@@ -8,7 +8,6 @@
 
 - name: deploy local
   include: deploy_local.yml
-  when: hubot_deploy_local
 
 #- name: debian install
 #  include: install_debian.yml
@@ -19,5 +18,5 @@
 
 - name: service
   include: service.yml
-  when: hubot_deploy_local
+  when: hubot_service_install
 

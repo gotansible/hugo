@@ -1,5 +1,6 @@
 ---
 
+#assumes no trailing /
 - name: deploy local - copy source
   synchronize:
     src: "{{ hubot_source_local_path }}"
@@ -12,4 +13,11 @@
     recurse: yes
     owner: "{{ hubot_user }}"
     group: "{{ hubot_group }}"
+
+
+- name: deploy local - symlink
+  file:
+    state=link
+    src={{ hubot_install_dir }}/{{ hubot_source_local_path | basename }}
+    dest={{ hubot_install_dir }}/current
 
