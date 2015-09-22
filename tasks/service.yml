@@ -1,0 +1,13 @@
+---
+
+- name: service - setup and run
+  runit:
+    name: hubot
+    enabled: yes
+    state: start
+    timeout: 10
+    user: "{{ hubot_user }}"
+    command: "{{ hubot_install_dir }}/bin/hubot --adapter {{ hubot_adapter }}"
+    env_vars: "{{ hubot_env_vars }}"
+  register: hubot_service_status
+

@@ -1,0 +1,8 @@
+---
+
+- name: restart hubot
+  command: sudo sv restart hubot
+  when: hubot_service_install and nginx_service_status is defined and not hubot_service_status.restarted
+
+
+

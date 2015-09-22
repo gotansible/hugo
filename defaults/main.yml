@@ -15,6 +15,9 @@ hubot_source_local_path: emptish/
 
 hubot_adapter: slack
 
+hubot_env_vars:
+  HUBOT_SLACK_TOKEN: setme
+
 hubot_node_packages:
   - cheerio
   - clark
