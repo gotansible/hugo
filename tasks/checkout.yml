@@ -1,0 +1,22 @@
+---
+- name: checkout - build dir
+  sudo: false
+  local_action:
+    module: file
+    state: directory
+    path: "{{ hubot_checkout_local_path }}"
+
+- name: checkout - get repo local without key
+  sudo: false
+  local_action:
+    module: git
+    repo: "{{ hubot_repo }}"
+    version: "{{ hubot_repo_version }}"
+    depth: 1
+    update: yes
+    accept_hostkey: yes
+    dest: "{{ hubot_checkout_local_path }}"
+    force: yes
+    recursive: yes
+  when: not hubot_checkout_skip and checkout_keyfile|length == 0
+

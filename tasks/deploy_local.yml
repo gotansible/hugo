@@ -3,7 +3,7 @@
 #assumes no trailing /
 - name: deploy local - copy source
   synchronize:
-    src: "{{ hubot_source_local_path }}"
+    src: "{{ hubot_checkout_local_path }}"
     dest: "{{ hubot_install_dir }}"
 
 - name: deploy local - set user permissions

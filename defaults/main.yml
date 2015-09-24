@@ -10,10 +10,14 @@ hubot_group: hubot
 
 # development related
 hubot_service_install: true
-hubot_source_local_path: emptish/
+hubot_checkout_skip: false
+hubot_checkout_local_path: /tmp/test/ansible/hubot
+
+# replace with your hubot repo
+hubot_repo: "https://github.com/github/hubot"
+hubot_repo_version: master
 
 hubot_adapter: slack
-
 hubot_env_vars:
   HUBOT_SLACK_TOKEN: setme
 
